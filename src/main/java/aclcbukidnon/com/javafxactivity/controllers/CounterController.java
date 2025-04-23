@@ -1,24 +1,30 @@
 package aclcbukidnon.com.javafxactivity.controllers;
 
 
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class CounterController {
 
     @FXML
-    private Label labelCount;
+    private Label numberLabel;
 
+    private int count = 0;
 
     @FXML
-    protected void onPlusClick() {
-
+    private void onClickAdd() {
+        count++;
+        updateLabel();
     }
 
     @FXML
-    protected void onMinusClick() {
-
+    private void onClickMinus() {
+        count--;
+        updateLabel();
     }
 
-
+    private void updateLabel() {
+        numberLabel.setText(String.valueOf(count));
+    }
 }
